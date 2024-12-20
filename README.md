@@ -11,7 +11,7 @@ Welcome to the Starfield Simulation project! This project simulates a starfield 
 
 Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/StarfieldSimulation.git
+    git clone https://github.com/Paulchen-git/StarfieldSimulation.git
     ```
 
 ## Usage
