@@ -14,8 +14,8 @@ public class Star {
         x = (float) StarfieldSimulation.WIDTH/2;
         y = (float) StarfieldSimulation.HEIGHT/2;
         while (x == StarfieldSimulation.WIDTH/2 && y == StarfieldSimulation.HEIGHT/2) {
-            x = (float) (Math.random() * StarfieldSimulation.WIDTH/2 + StarfieldSimulation.WIDTH/4);
-            y = (float) (Math.random() * StarfieldSimulation.HEIGHT/2 + StarfieldSimulation.HEIGHT/4);
+            x = (float) (Math.random() * StarfieldSimulation.WIDTH/4 + StarfieldSimulation.WIDTH*3/8);
+            y = (float) (Math.random() * StarfieldSimulation.HEIGHT/4 + StarfieldSimulation.HEIGHT*3/8);
         }
         setSpeed();
     }
@@ -48,6 +48,13 @@ public class Star {
     }
 
     public void render(Graphics g) {
+        float xCenter = StarfieldSimulation.WIDTH/2;
+        float yCenter = StarfieldSimulation.HEIGHT/2;
+        float norm = (float) Math.sqrt((x - xCenter)*(x - xCenter) + (y - yCenter)*(y - yCenter));
+        float maxnorm = (float) Math.sqrt((xCenter)*(xCenter) + (yCenter)*(yCenter));
+        Graphics2D g2d = (Graphics2D) g;
+        float thickness = 1 + (norm/maxnorm);
+        g2d.setStroke(new BasicStroke(thickness));
         g.setColor(Color.WHITE);
         g.drawLine((int) prevX, (int) prevY, (int) x, (int) y);
     }

@@ -1,5 +1,8 @@
 public class MainClass {
     public static void main(String[] args) {
-        StarfieldSimulation simulation = new StarfieldSimulation(400);
+
+        int numStars = 400;
+
+        StarfieldSimulation simulation = new StarfieldSimulation(numStars);
     }
 }
